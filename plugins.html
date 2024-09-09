@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+  <head>
+    <meta charset="UTF-8">
+
+
+<title>ComPRePS | An Automated Cloud-based Image Analysis tool to democratize AI in Digital Pathology</title>
+<meta name="generator" content="Jekyll v3.9.5" />
+<meta property="og:title" content="ComPRePS" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="An Automated Cloud-based Image Analysis tool to democratize AI in Digital Pathology" />
+<meta property="og:description" content="An Automated Cloud-based Image Analysis tool to democratize AI in Digital Pathology" />
+<link rel="canonical" href="https://compreps.netlify.app/plugins.html" />
+<meta property="og:url" content="https://compreps.netlify.app/plugins.html" />
+<meta property="og:site_name" content="ComPRePS" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="ComPRePS" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"An Automated Cloud-based Image Analysis tool to democratize AI in Digital Pathology","headline":"ComPRePS","url":"https://compreps.netlify.app/plugins.html"}</script>
+
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:200,700&display=swap" as="style" type="text/css" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="stylesheet" href="style.css">
+
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+
+  </head>
+  <body>
+    <a id="skip-to-content" href="#content">Skip to the content.</a>
+
+    <header class="page-header" role="banner">
+      <h1 class="project-name"><a href="https://compreps.netlify.app/" target="_blank", style="color: white">ComPRePS</a></h1>
+      <h2 class="project-tagline">An Automated Cloud-based Image Analysis tool to democratize AI in Digital Pathology</h2>
+        <a href=/plugins.html class="btn">Plugins</a>
+        <a href=/Contact.html class="btn">Contact</a>
+        <a href=/Articles.html class="btn">Articles</a>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+       <h2>Plugins</h2>
+<ul id="markdown-toc">
+  <li><a href="#Multi-Compartment-Segmentation" id="markdown-toc-introductory-video">Multi Compartment Segmentation</a></li>
+  <li><a href="#IFTA" id="markdown-toc-7-click-analysis">IFTA and glomerulosclerosis Segmentation </a></li>
+  <li><a href="#PTC_Segmentation" id="markdown-toc-refining-image-processing">PTC Segmentation</a></li>
+  <li><a href="#testing-segmentation" id="markdown-toc-testing-segmentation">Spot Segmentation</a></li>
+  <li><a href="#Feature_Extraction" id="markdown-toc-importing-segmentation">Feature Extraction</a></li>
+</ul>
+
+
+<h2>Model Zoo</h2>
+<li><a href="https://athena.rc.ufl.edu/#collection/642db59b6916af405c4b0df9/folder/6434ba13435c92704a2aff5a" id="gloms" target="_blank">Glomeruli_models</a></li>
+<li><a href="https://athena.rc.ufl.edu/#collection/642db59b6916af405c4b0df9/folder/64c937ee2f701e8bf74bf9a2" id="gloms" target="_blank">IFTA_models</a></li>
+<li><a href="https://athena.rc.ufl.edu/#collection/642db59b6916af405c4b0df9/folder/64d5a56edfcb9f6daa6dc5f0" id="gloms" target="_blank">Image-to-Image Translation</a></li>
+<li><a href="https://athena.rc.ufl.edu/#collection/642db59b6916af405c4b0df9/folder/652982e78887cdd98c7c4e0b" id="gloms" target="_blank">imagenet_trained_model</a></li>
+<li><a href="https://athena.rc.ufl.edu/#collection/642db59b6916af405c4b0df9/folder/648c794b31b16f5747b20401" id="gloms" target="_blank">Multi_compartment_model</a></li>
+<li><a href="https://athena.rc.ufl.edu/#collection/642db59b6916af405c4b0df9/folder/65d912cdd2f45e99a9c63b97" id="gloms" target="_blank">podosighter_model</a></li>
+<li><a href="https://athena.rc.ufl.edu/#collection/642db59b6916af405c4b0df9/folder/64c0a0c62f701e8bf7432ae1" id="gloms" target="_blank">PTC_segmenation</a></li>
+<li><a href="https://athena.rc.ufl.edu/#collection/642db59b6916af405c4b0df9/folder/652983728887cdd98c7c4e0d" id="gloms" target="_blank">Vessel_segmentation</a></li>
+
+<h2 id="Multi-Compartment-Segmentation">Multi Compartment Segmentation</h2>
+
+<p>Multi compartment segmentation is a <a href="https://github.com/facebookresearch/detectron2" target="_blank">detectron2</a> based panoptic segmentation model that is implemented as a pipeline in <a href="https://athena.rc.ufl.edu/" target="_blank">Digital Slide Archive</a>(DSA) developed and maintained by <a href="https://cmilab.nephrology.medicine.ufl.edu/" target="_blank"> CMI lab </a> at the University of Florida. This DSA plugin allows users to segment a kidney Whole Slide Image (WSI) into 6 compartments, namely: cortical interstitium, medullary interstitium, non-sclerotic glomerulus, sclerotic glomerulus, tubule, and artery/arteriole.</p>
+
+<ol>
+  <li>Create an account at <a href="https://athena.rc.ufl.edu/" target="_blank">DSA</a> and log in with your credentials.</li>
+  <li>Upload a WSI in a folder either under the Collections tab or in your User directory.</li>
+  <li>Open the image in HistomicsUI by clicking the arrow icon:</li>
+
+
+<img src="fig1.png" alt="arrow icon1" style="display: block; margin-top: 1rem; max-width: 100%;">
+
+<li>From Analyses tab on the top right in HistomicsUI select: sarderlab/ComPRePS/segmentation/MultiCompartmentSegment.</li>
+
+<img src="fig2.png" alt="Arrow Icon2" style="display: block; margin-top: 1rem; max-width: 100%;">
+
+<li>Populate the fields in the tab that appears on the left side of the page: Select the Base Directory as the directory where your WSI is located and select the Model File from the Collections/models/segmentation_models/Multi_compartment_model with an available pre train model and click Sumbit botton.</li>
+
+<img src="fig3.png" alt="arrow Icon3" style="display: block; margin-top: 1rem; max-width: 100%;">
+
+
+<li>Once the job sucessfuly runs, the segmented compartments will appear on top of the image. You can visuazlie them all or one-by-one by selecting the layers you wish to view from Annotations/Other tab on the right.</li>
+
+</ol>
+
+
+<h2 id="IFTA">IFTA and glomerulosclerosis Segmentation</h2>
+
+<p>This <a href="https://github.com/SarderLab/IFTA_segmentation" target="_blank">github repo</a> contains information on accessing the shared materials for the JASN manuscript entitled "Automated Computational Detection of Interstitial Fibrosis, Tubular Atrophy, and Glomerulosclerosis", submitted to JASN in November 2020. Shared materials include a pre-trained CNN model and corresponding codes to perform whole slide segmentation of IFTA and glomerulosclerosis on new renal biopsies. Also included are example whole slide images and their CNN segmented output.</p>
+
+
+<p>To view the CNN segmentation on whole slide images, you must have <a href="https://www.leicabiosystems.com/digital-pathology/manage/aperio-imagescope/" target="_blank">Aperio ImageScope</a> installed on your computer. Then, simply place the whole slide image (.svs file) and its corresponding annotations (.xml file) in the same directory on your computer. Upon opening the .svs file with ImageScope, you will see the CNN predictions overlaid on the whole slide. We provide some example pre-generated segmentations on whole slide images <a href="https://buffalo.box.com/s/thlo5vry0ii8sutvke9bmva0gm5aos0e" target="_blank">here. </a> These segmentation outputs were morphologically post-processed to remove IFTA regions with size < 1730µm<sup>2</sup> glomerular regions with size < 1500µm<sup>2</sup> from the whole slide mask.</p>
+
+
+<h2 id="PTC_Segmentation">PTC Segmentation</h2>
+
+<p> Peritubular capillary (PTC) segmentation is a computational image analysis plugin designed to quantify various attributes of PTCs from kidney biopsies. This plugin enables the extraction of new information from whole-slide images (WSIs) with potential clinical relevance. PTC density, size, and shape are among the attributes analyzed, offering insights into kidney microvasculature status and disease progression.</p>
+
+<h2 id= "Feature_Extraction"> Feature Extraction</h2>
+
+<p>Feature extraction is a pivotal aspect of histopathological analysis, especially in the study of kidney morphology. Utilizing whole slide imaging (WSI) and advanced deep learning (DL) techniques, this study focuses on quantifying key histomorphometric parameters from kidney tissue sections. By developing a robust panoptic segmentation neural network, we accurately identified and segmented critical kidney structures, including glomeruli, tubules, and arteries. Our methodology involved detailed image preprocessing, tile-based segmentation, and the extraction of specific features like diameters, areas, and densities. Through multivariable regression analysis, we established significant correlations between these histomorphometric features and clinical parameters such as age, sex, serum creatinine (SCr), and estimated glomerular filtration rate (eGFR). This approach not only enhances the precision and efficiency of histopathological analysis but also provides valuable insights into the natural population variance of kidney morphology and its clinical implications.</p>
+
+
+<footer class="site-footer">
+  <span class="site-footer-credits">Copyright CMI Lab 2024.</span>
+</footer>
+    </main>
+  </body>
+</html>
+
