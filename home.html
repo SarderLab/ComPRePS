@@ -35,16 +35,18 @@
 
   </head>
   <body>
-    <a id="skip-to-content" href="#content">Skip to the content.</a>
 
-    <header class="page-header" role="banner">
-      <h1 class="project-name"><a href="/home.html", style="color: rgb(255, 255, 255)">ComPRePS</a></h1>
-      <h2 class="project-tagline">An Automated Cloud-based Image Analysis tool to democratize AI in Digital Pathology</h2>
-        <a href=/plugins.html class="btn">Plugins</a>
-        <a href=/Articles.html class="btn">Articles</a>
-        <a href=/Contact.html class="btn">Contact</a>
-        <a href="https://app.smartsheet.com/b/form/d27767f494de441787128587141f8e36" class="btn">Feedback</a>
-    </header>
+  <!-- Header Section -->
+  <header class="page-header" role="banner">
+    <h1 class="project-name"><a href="/home.html">ComPRePS</a></h1>
+    <h2 class="project-tagline">An Automated Cloud-based Image Analysis Tool to Democratize AI in Digital Pathology</h2>
+    <nav>
+      <a href="/plugins.html" class="btn">Plugins</a>
+      <a href="/Articles.html" class="btn">Articles</a>
+      <a href="/Contact.html" class="btn">Contact</a>
+      <a href="https://app.smartsheet.com/b/form/d27767f494de441787128587141f8e36" class="btn">Feedback</a>
+    </nav>
+  </header>
 
     <main id="content" class="main-content" role="main">
        <h2 id="volumetric-tissue-exploration-and-analysis">Welcome to ComPRePS: Revolutionizing Digital Pathology with AI</h2>
@@ -59,17 +61,41 @@
        
        <p>ComPRePS offers an all-in-one solution for renal pathology analysis, designed for both scalability and efficiency. The platform provides on-demand cloud computing, enabling users to process large volumes of data without the need for costly local hardware. With an intuitive web-based interface, pathologists can easily upload, visualize, and interact with their data, facilitating the integration of computational pathology into routine diagnostics and research. This seamless workflow empowers medical professionals to enhance the quality of patient care through data-driven insights.</p> 
        
+       
+
        <h3>Fostering Collaboration and Innovation</h3>
        
        <p>Built on the <strong>NIH’s FAIR Data Principles</strong> (Findable, Accessible, Interoperable, Reusable), ComPRePS promotes open science and collaboration within the global pathology community. By offering access to cutting-edge AI tools, it enables researchers and clinicians worldwide to work together, sharing insights and improving diagnostic techniques. With ComPRePS, AI-powered image analysis is no longer limited to specialized labs—it’s a tool for everyone, driving innovation and improving outcomes in medical research and patient care.</p>
-       
-    
+               <!-- Tutorial Video Section -->
+               <section class="video-section">
+                <h3>ComPRePS in action</h3>
+                <p>Learn how to use ComPRePS for analyzing digital pathology images.</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/YpLnxpLXULQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </section>
+    <!-- Try It Out Section -->
+    <section id="try-it-out" class="try-section">
+      <h2>Try It Out!</h2>
+      <p>Experience the power of ComPRePS by following these simple steps:</p>
+      <ol>
+        <li><strong>Sign Up:</strong> Create an account on the <a href="https://athena.rc.ufl.edu/" target="_blank">Digital Slide Archive (DSA)</a>.</li>
+        <li><strong>Upload Your Image:</strong> Log in and upload a Whole Slide Image (WSI) in the "Collections" tab or your personal directory.</li>
+        <li><strong>Run the Analysis:</strong>
+          <ul>
+            <li>Open the WSI in HistomicsUI.</li>
+            <li>Select the appropriate plugin (e.g., <strong>Multi Compartment Segmentation</strong>) from the "Analyses" tab.</li>
+            <li>Choose the base directory and pre-trained model from the model zoo, then click "Submit."</li>
+          </ul>
+        </li>
+        <li><strong>Visualize Results:</strong> After processing, view the segmented kidney compartments or structures by selecting layers from the "Annotations" tab.</li>
+      </ol>
+      <p>Ready to start? <a href="https://athena.rc.ufl.edu/" target="_blank" class="btn">Try ComPRePS Now!</a></p>
+    </section>
 
-      <footer class="site-footer">
-        
-        
-        <span class="site-footer-credits">Copyright CMIL Lab, 2024.</span>
-      </footer>
+
+
+    <footer class="site-footer">
+      <span class="site-footer-credits">© CMIL Lab, 2024. All rights reserved.</span>
+  </footer>
     </main>
   </body>
 </html>

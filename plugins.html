@@ -1,114 +1,95 @@
 <!DOCTYPE html>
 <html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <title>ComPRePS | Cloud-based Image Analysis for Digital Pathology</title>
+  <meta name="description" content="An Automated Cloud-based Image Analysis tool to democratize AI in Digital Pathology">
+  <meta property="og:title" content="ComPRePS">
+  <meta property="og:description" content="An Automated Cloud-based Image Analysis tool to democratize AI in Digital Pathology">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://compreps.wiki/plugins.html">
+  <meta property="og:site_name" content="ComPRePS">
+  <meta property="og:locale" content="en_US">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
   
-  <head>
-    <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;400;700&display=swap" as="style" type="text/css" crossorigin>
+</head>
 
-    <title>ComPRePS | Cloud-based Image Analysis for Digital Pathology</title>
-    <meta name="description" content="An Automated Cloud-based Image Analysis tool to democratize AI in Digital Pathology" />
-    <meta property="og:title" content="ComPRePS" />
-    <meta property="og:description" content="An Automated Cloud-based Image Analysis tool to democratize AI in Digital Pathology" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://compreps.wiki/plugins.html" />
-    <meta property="og:site_name" content="ComPRePS" />
-    <meta property="og:locale" content="en_US" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#157878">
-    
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:200,700&display=swap" as="style" type="text/css" crossorigin>
+<body>
 
-  </head>
-  <body>
-    <a id="skip-to-content" href="#content">Skip to the content.</a>
+  <!-- Header Section -->
+  <header class="page-header" role="banner">
+    <h1 class="project-name"><a href="/home.html">ComPRePS</a></h1>
+    <h2 class="project-tagline">An Automated Cloud-based Image Analysis Tool to Democratize AI in Digital Pathology</h2>
+    <nav>
+      <a href="/plugins.html" class="btn">Plugins</a>
+      <a href="/Articles.html" class="btn">Articles</a>
+      <a href="/Contact.html" class="btn">Contact</a>
+      <a href="https://app.smartsheet.com/b/form/d27767f494de441787128587141f8e36" class="btn">Feedback</a>
+    </nav>
+  </header>
 
-    <header class="page-header" role="banner">
-      <h1 class="project-name"><a href="/home.html", style="color: rgb(255, 255, 255)">ComPRePS</a></h1>
-      <h2 class="project-tagline">An Automated Cloud-based Image Analysis tool to democratize AI in Digital Pathology</h2>
-        <a href=/plugins.html class="btn">Plugins</a>
-        <a href=/Articles.html class="btn">Articles</a>
-        <a href=/Contact.html class="btn">Contact</a>
-        <a href="https://app.smartsheet.com/b/form/d27767f494de441787128587141f8e36" class="btn">Feedback</a>
-    </header>
+  <!-- Main Content Section -->
+  <main id="content" class="main-content">
+    <h2 class="section-heading">Plugins</h2>
+    <ul class="plugin-list">
+      <li><a href="#Multi-Compartment-Segmentation">Multi Compartment Segmentation</a></li>
+      <li><a href="#IFTA">IFTA and Glomerulosclerosis Segmentation</a></li>
+      <li><a href="#PTC_Segmentation">PTC Segmentation</a></li>
+      <li><a href="#Spot_Segmentation">Spot Segmentation</a></li>
+      <li><a href="#Feature_Extraction">Feature Extraction</a></li>
+    </ul>
 
 
-    <main id="content" class="main-content" role="main">
-      <h2>Plugins</h2>
-      <ul>
-        <li><a href="#Multi-Compartment-Segmentation">Multi Compartment Segmentation</a></li>
-        <li><a href="#IFTA">IFTA and Glomerulosclerosis Segmentation</a></li>
-        <li><a href="#PTC_Segmentation">PTC Segmentation</a></li>
-        <li><a href="#Spot_Segmentation">Spot Segmentation</a></li>
-        <li><a href="#Feature_Extraction">Feature Extraction</a></li>
-      </ul>
 
-      <!-- Tutorial Video Section -->
-      <section class="video-section" style="text-align: center; margin-bottom: 20px;">
-        <h3>Watch the Tutorial</h3>
-        <p>Learn how to use ComPRePS for analyzing digital pathology images.</p>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/YpLnxpLXULQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      </section>
-
-      <!-- Plugin Sections -->
-      <section id="Multi-Compartment-Segmentation">
-        <h2><a href="https://github.com/SarderLab/PTC_segmentation/" target="_blank">Multi Compartment Segmentation</a></h2>
+    <!-- Plugin Sections -->
+    <section id="Multi-Compartment-Segmentation" class="plugin-section">
+      <h2><a href="https://github.com/SarderLab/PTC_segmentation/" target="_blank">Multi Compartment Segmentation</a></h2>
+      <div class="plugin-content">
+        <img src="media/multi_compartment.gif" alt="Multi Compartment Segmentation" class="plugin-image">
         <p>Our <a href="https://github.com/facebookresearch/detectron2" target="_blank">Detectron2</a>-based segmentation model allows users to analyze kidney Whole Slide Images (WSI) by identifying and segmenting six compartments: cortical interstitium, medullary interstitium, non-sclerotic glomerulus, sclerotic glomerulus, tubule, and artery/arteriole.</p>
-      </section>
+      </div>
+    </section>
+    
 
-      <section id="IFTA">
-        <h2><a href="https://github.com/SarderLab/PTC_segmentation/" target="_blank">IFTA and Glomerulosclerosis Segmentation</a></h2>
+    <section id="IFTA" class="plugin-section">
+      <h2><a href="https://github.com/SarderLab/PTC_segmentation/" target="_blank">IFTA and Glomerulosclerosis Segmentation</a></h2>
+      <div class="plugin-content">
+        <img src="media/IFTA.png" alt="IFTA and Glomerulosclerosis Segmentation" class="plugin-image">
         <p>The IFTA Segmentation tool automates the detection and quantification of Interstitial Fibrosis, Tubular Atrophy (IFTA), and Glomerulosclerosis in kidney tissue. This tool enables efficient and accurate segmentation from renal biopsy images.</p>
-      </section>
+      </div>
+    </section>
 
-      <section id="PTC_Segmentation">
-        <h2><a href="https://github.com/SarderLab/PTC_segmentation/" target="_blank">PTC Segmentation</a></h2>
+    <section id="PTC_Segmentation" class="plugin-section">
+      <h2><a href="https://github.com/SarderLab/PTC_segmentation/" target="_blank">PTC Segmentation</a></h2>
+      <div class="plugin-content">
+        <img src="media/PTC.png" alt="PTC Segmentation" class="plugin-image">
         <p>Peritubular Capillary (PTC) segmentation quantifies PTC characteristics such as density, size, and shape in kidney biopsies, providing insights into microvascular changes and disease progression. The plugin can analyze whole-slide images to extract relevant clinical data.</p>
-      </section>
+      </div>
+    </section>
 
-      <section id="Feature_Extraction">
-        <h2><a href="https://github.com/SarderLab/PTC_segmentation/" target="_blank">Feature Extraction</a></h2>
+
+
+    <section id="Feature_Extraction" class="plugin-section">
+      <h2><a href="https://github.com/SarderLab/PTC_segmentation/" target="_blank">Feature Extraction</a></h2>
+      <div class="plugin-content">
+        <img src="media/feature_extraction.png" alt="Feature Extraction" class="plugin-image">
         <p>Our feature extraction module identifies and segments key kidney structures (glomeruli, tubules, arteries) using deep learning. It then quantifies key metrics (diameters, areas, densities) and correlates these with clinical parameters like age, serum creatinine, and eGFR for better understanding of kidney morphology and disease implications.</p>
-      </section>
+      </div>
+    </section>
 
-      <!-- Try It Out Section -->
-      <section id="try-it-out">
-        <h2>Try It Out!</h2>
-        <p>Experience the power of ComPRePS by following these simple steps:</p>
-        <ol>
-          <li><strong>Sign Up:</strong> Create an account on the <a href="https://athena.rc.ufl.edu/" target="_blank">Digital Slide Archive (DSA)</a>.</li>
-          <li><strong>Upload Your Image:</strong> Log in and upload a Whole Slide Image (WSI) in the "Collections" tab or your personal directory.</li>
-          <li><strong>Run the Analysis:</strong> 
-            <ul>
-              <li>Open the WSI in HistomicsUI.</li>
-              <li>Select the appropriate plugin (e.g., <strong>Multi Compartment Segmentation</strong>) from the "Analyses" tab.</li>
-              <li>Choose the base directory and pre-trained model from the model zoo, then click "Submit."</li>
-            </ul>
-          </li>
-          <li><strong>Visualize Results:</strong> After processing, view the segmented kidney compartments or structures by selecting layers from the "Annotations" tab.</li>
-        </ol>
-        <p>Ready to start? <a href="https://athena.rc.ufl.edu/" target="_blank"><strong>Try ComPRePS Now!</strong></a></p>
-      </section>
 
-      <!-- Model Zoo Section -->
-      <section id="model-zoo">
-        <h2>Model Zoo</h2>
-        <ul>
-          <li><a href="https://athena.rc.ufl.edu/#collection/642db59b6916af405c4b0df9/folder/6434ba13435c92704a2aff5a" target="_blank">Glomeruli Models</a></li>
-          <li><a href="https://athena.rc.ufl.edu/#collection/642db59b6916af405c4b0df9/folder/64c937ee2f701e8bf74bf9a2" target="_blank">IFTA Models</a></li>
-          <li><a href="https://athena.rc.ufl.edu/#collection/642db59b6916af405c4b0df9/folder/64d5a56edfcb9f6daa6dc5f0" target="_blank">Image-to-Image Translation</a></li>
-          <li><a href="https://athena.rc.ufl.edu/#collection/642db59b6916af405c4b0df9/folder/652982e78887cdd98c7c4e0b" target="_blank">ImageNet Trained Models</a></li>
-          <li><a href="https://athena.rc.ufl.edu/#collection/642db59b6916af405c4b0df9/folder/648c794b31b16f5747b20401" target="_blank">Multi Compartment Models</a></li>
-          <li><a href="https://athena.rc.ufl.edu/#collection/642db59b6916af405c4b0df9/folder/65d912cdd2f45e99a9c63b97" target="_blank">Podosighter Models</a></li>
-          <li><a href="https://athena.rc.ufl.edu/#collection/642db59b6916af405c4b0df9/folder/64c0a0c62f701e8bf7432ae1" target="_blank">PTC Segmentation</a></li>
-          <li><a href="https://athena.rc.ufl.edu/#collection/642db59b6916af405c4b0df9/folder/652983728887cdd98c7c4e0d" target="_blank">Vessel Segmentation</a></li>
-        </ul>
-      </section>
 
-      <!-- Footer -->
-      <footer class="site-footer">
-        <span class="site-footer-credits">Copyright CMI Lab 2024.</span>
-      </footer>
-    </main>
-  </body>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+      <span class="site-footer-credits">© CMIL Lab, 2024. All rights reserved.</span>
+  </footer>
+  
+  </main>
+</body>
 </html>
