@@ -34,16 +34,25 @@
     </style>
 </head>
 <body>
-    <a id="skip-to-content" href="#content">Skip to the content.</a>
 
-    <header class="page-header" role="banner">
-        <h1 class="project-name"><a href="/home.html", style="color: rgb(255, 255, 255)">ComPRePS</a></h1>
-        <h2 class="project-tagline">An Automated Cloud-based Image Analysis tool to democratize AI in Digital Pathology</h2>
-          <a href=/plugins.html class="btn">Plugins</a>
-          <a href=/Articles.html class="btn">Articles</a>
-          <a href=/Contact.html class="btn">Contact</a>
-          <a href="https://app.smartsheet.com/b/form/d27767f494de441787128587141f8e36" class="btn">Feedback</a>
-      </header>
+          <!-- Navbar Section -->
+          <header class="navbar">
+            <div class="navbar-container">
+                <!-- Logo -->
+                <div class="logo">
+                  <h1 class="project-name"><a href="/home.html">ComPRePS</a></h1>
+                </div>
+                <!-- Navigation Links -->
+                <nav class="nav">
+                  <a href="/plugins.html">Plugins</a>
+                  <a href="/Contact.html">Contact</a>
+                  <a href="https://app.smartsheet.com/b/form/d27767f494de441787128587141f8e36">Feedback</a>
+                </nav>                
+            </div>
+        </header>
+    
+ 
+
   
 
     <main id="content" class="main-content" role="main">
@@ -54,14 +63,45 @@
             <p>Principal Investigator</p>
         </div>
         <div class="team-member">
-            <img src="media/sayat.jpg" alt="Member 2">
+            <img src="media/Anindya.jpg" alt="Member 2">
+            <h3>Anindya Sankar Paul</h3>
+            <p>Assistant Scientist</p>
+            <p class="expertise">
+                Expertise: Deep Learning, Federated Learning, Secure and Privacy Preserving AI, Signal Processing, Medical Imaging
+            </p>
+            <span class="read-more" onclick="toggleText(this)">Read More</span>
+        </div>
+        
+        <div class="team-member">
+            <img src="media/sayat.jpg" alt="Member 3">
             <h3>Sayat Mimar</h3>
             <p>Senior Scientist</p>
-            <p>Expertise: AI, Data Science, Software Development</p>
+            <p class="expertise">Expertise: AI, Data Science, Software Development</p>
         </div>
         <footer class="site-footer">
-            <span class="site-footer-credits">Copyright CMI Lab 2024.</span>
-        </footer>
+            <div class="container">
+              <p>© CMIL Lab, 2024. All rights reserved.</p>
+              <nav class="footer-nav">
+                <a href="/home.html">Home</a>
+                <a href="/plugins.html">Plugins</a>
+                <a href="/contact.html">Contact</a>
+                <a href="https://app.smartsheet.com/b/form/d27767f494de441787128587141f8e36" target="_blank">Feedback</a>
+              </nav>
+            </div>
+          </footer>
     </main>
+    <script>
+        function toggleText(element) {
+            const expertiseText = element.previousElementSibling;
+            if (expertiseText.style.webkitLineClamp === "2") {
+                expertiseText.style.webkitLineClamp = "none"; // Show all lines
+                element.textContent = "Read Less";
+            } else {
+                expertiseText.style.webkitLineClamp = "2"; // Limit to 2 lines
+                element.textContent = "Read More";
+            }
+        }
+    </script>
+    
 </body>
 </html>
