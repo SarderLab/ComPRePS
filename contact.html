@@ -35,17 +35,24 @@
 </head>
 <body>
 
-  <!-- Header Section -->
-  <header class="page-header" role="banner">
-    <h1 class="project-name"><a href="/home.html">ComPRePS</a></h1>
-    <h2 class="project-tagline">An Automated Cloud-based Image Analysis Tool to Democratize AI in Digital Pathology</h2>
-    <nav>
-      <a href="/plugins.html" class="btn">Plugins</a>
-      <a href="/Articles.html" class="btn">Articles</a>
-      <a href="/Contact.html" class="btn">Contact</a>
-      <a href="https://app.smartsheet.com/b/form/d27767f494de441787128587141f8e36" class="btn">Feedback</a>
-    </nav>
-  </header>
+          <!-- Navbar Section -->
+          <header class="navbar">
+            <div class="navbar-container">
+                <!-- Logo -->
+                <div class="logo">
+                  <h1 class="project-name"><a href="/home.html">ComPRePS</a></h1>
+                </div>
+                <!-- Navigation Links -->
+                <nav class="nav">
+                  <a href="/plugins.html">Plugins</a>
+                  <a href="/Contact.html">Contact</a>
+                  <a href="https://app.smartsheet.com/b/form/d27767f494de441787128587141f8e36">Feedback</a>
+                </nav>                
+            </div>
+        </header>
+    
+ 
+
   
 
     <main id="content" class="main-content" role="main">
@@ -72,8 +79,16 @@
             <p class="expertise">Expertise: AI, Data Science, Software Development</p>
         </div>
         <footer class="site-footer">
-            <span class="site-footer-credits">© CMIL Lab, 2024. All rights reserved.</span>
-        </footer>
+            <div class="container">
+              <p>© CMIL Lab, 2024. All rights reserved.</p>
+              <nav class="footer-nav">
+                <a href="/home.html">Home</a>
+                <a href="/plugins.html">Plugins</a>
+                <a href="/contact.html">Contact</a>
+                <a href="https://app.smartsheet.com/b/form/d27767f494de441787128587141f8e36" target="_blank">Feedback</a>
+              </nav>
+            </div>
+          </footer>
     </main>
     <script>
         function toggleText(element) {

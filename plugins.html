@@ -1,95 +1,162 @@
 <!DOCTYPE html>
 <html lang="en-US">
+
 <head>
   <meta charset="UTF-8">
-  <title>ComPRePS | Cloud-based Image Analysis for Digital Pathology</title>
-  <meta name="description" content="An Automated Cloud-based Image Analysis tool to democratize AI in Digital Pathology">
-  <meta property="og:title" content="ComPRePS">
-  <meta property="og:description" content="An Automated Cloud-based Image Analysis tool to democratize AI in Digital Pathology">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://compreps.wiki/plugins.html">
-  <meta property="og:site_name" content="ComPRePS">
-  <meta property="og:locale" content="en_US">
+  <title>ComPRePS | Plugins</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#157878">
-  
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@200;400;700&display=swap" as="style" type="text/css" crossorigin>
+  <style>
+    .plugin-details {
+      display: none; /* Hide all details sections by default */
+    }
+    .plugin-details.active {
+      display: block; /* Show the active section */
+    }
+    .back-btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      background-color: #1F4068;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+    .back-btn:hover {
+      background-color: #194592;
+    }
+  </style>
 </head>
 
 <body>
-
-  <!-- Header Section -->
-  <header class="page-header" role="banner">
-    <h1 class="project-name"><a href="/home.html">ComPRePS</a></h1>
-    <h2 class="project-tagline">An Automated Cloud-based Image Analysis Tool to Democratize AI in Digital Pathology</h2>
-    <nav>
-      <a href="/plugins.html" class="btn">Plugins</a>
-      <a href="/Articles.html" class="btn">Articles</a>
-      <a href="/Contact.html" class="btn">Contact</a>
-      <a href="https://app.smartsheet.com/b/form/d27767f494de441787128587141f8e36" class="btn">Feedback</a>
-    </nav>
+  <!-- Header -->
+  <header class="navbar">
+    <div class="navbar-container">
+      <div class="logo">
+        <h1 class="project-name"><a href="/home.html">ComPRePS</a></h1>
+      </div>
+      <nav class="nav">
+        <a href="/plugins.html">Plugins</a>
+        <a href="/Contact.html">Contact</a>
+        <a href="https://app.smartsheet.com/b/form/d27767f494de441787128587141f8e36" target="_blank">Feedback</a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Main Content Section -->
-  <main id="content" class="main-content">
-    <h2 class="section-heading">Plugins</h2>
-    <ul class="plugin-list">
-      <li><a href="#Multi-Compartment-Segmentation">Multi Compartment Segmentation</a></li>
-      <li><a href="#IFTA">IFTA and Glomerulosclerosis Segmentation</a></li>
-      <li><a href="#PTC_Segmentation">PTC Segmentation</a></li>
-      <li><a href="#Spot_Segmentation">Spot Segmentation</a></li>
-      <li><a href="#Feature_Extraction">Feature Extraction</a></li>
-    </ul>
-
-
-
-    <!-- Plugin Sections -->
-    <section id="Multi-Compartment-Segmentation" class="plugin-section">
-      <h2><a href="https://github.com/SarderLab/PTC_segmentation/" target="_blank">Multi Compartment Segmentation</a></h2>
-      <div class="plugin-content">
-        <img src="media/multi_compartment.gif" alt="Multi Compartment Segmentation" class="plugin-image">
-        <p>Our <a href="https://github.com/facebookresearch/detectron2" target="_blank">Detectron2</a>-based segmentation model allows users to analyze kidney Whole Slide Images (WSI) by identifying and segmenting six compartments: cortical interstitium, medullary interstitium, non-sclerotic glomerulus, sclerotic glomerulus, tubule, and artery/arteriole.</p>
+  <!-- Plugins Section -->
+  <section id="plugins-overview" class="features-section">
+    <div class="container">
+      <h2 class="section-heading">Explore Plugins</h2>
+      <p>Discover powerful AI-based tools to enhance your digital pathology workflows.</p>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3><a href="#" onclick="showDetails('multiCompartment')">Multi Compartment Segmentation</a></h3>
+          <p>Analyze kidney WSIs by segmenting six compartments, leveraging Detectron2-based AI models.</p>
+        </div>
+        <div class="feature-card">
+          <h3><a href="#" onclick="showDetails('ifta')">IFTA and Glomerulosclerosis Segmentation</a></h3>
+          <p>Automate the detection and quantification of Interstitial Fibrosis, Tubular Atrophy, and Glomerulosclerosis.</p>
+        </div>
+        <div class="feature-card">
+          <h3><a href="#" onclick="showDetails('ptc')">PTC Segmentation</a></h3>
+          <p>Quantify PTC density, size, and shape to gain insights into microvascular changes.</p>
+        </div>
+        <div class="feature-card">
+          <h3><a href="#" onclick="showDetails('featureExtraction')">Feature Extraction</a></h3>
+          <p>Extract key structural and morphological features for advanced clinical insights.</p>
+        </div>
       </div>
-    </section>
-    
+    </div>
+  </section>
 
-    <section id="IFTA" class="plugin-section">
-      <h2><a href="https://github.com/SarderLab/PTC_segmentation/" target="_blank">IFTA and Glomerulosclerosis Segmentation</a></h2>
-      <div class="plugin-content">
-        <img src="media/IFTA.png" alt="IFTA and Glomerulosclerosis Segmentation" class="plugin-image">
-        <p>The IFTA Segmentation tool automates the detection and quantification of Interstitial Fibrosis, Tubular Atrophy (IFTA), and Glomerulosclerosis in kidney tissue. This tool enables efficient and accurate segmentation from renal biopsy images.</p>
+  <section id="multiCompartment" class="plugin-details">
+    <div class="container">
+      <div class="details-content">
+        <div class="details-text">
+          <h3 class="section-heading">Multi Compartment Segmentation</h3>
+          <p>Leverage our <a href="https://github.com/facebookresearch/detectron2" target="_blank">Detectron2</a>-based model to analyze kidney WSIs by identifying and segmenting six compartments: cortical interstitium, medullary interstitium, non-sclerotic glomerulus, sclerotic glomerulus, tubule, and artery/arteriole.</p>
+          <a href="#" class="back-btn" onclick="showOverview()">Back to Plugins</a>
+        </div>
+        <div class="details-image">
+          <img src="media/multi_compartment.gif" alt="Multi Compartment Segmentation">
+        </div>
       </div>
-    </section>
-
-    <section id="PTC_Segmentation" class="plugin-section">
-      <h2><a href="https://github.com/SarderLab/PTC_segmentation/" target="_blank">PTC Segmentation</a></h2>
-      <div class="plugin-content">
-        <img src="media/PTC.png" alt="PTC Segmentation" class="plugin-image">
-        <p>Peritubular Capillary (PTC) segmentation quantifies PTC characteristics such as density, size, and shape in kidney biopsies, providing insights into microvascular changes and disease progression. The plugin can analyze whole-slide images to extract relevant clinical data.</p>
-      </div>
-    </section>
-
-
-
-    <section id="Feature_Extraction" class="plugin-section">
-      <h2><a href="https://github.com/SarderLab/PTC_segmentation/" target="_blank">Feature Extraction</a></h2>
-      <div class="plugin-content">
-        <img src="media/feature_extraction.png" alt="Feature Extraction" class="plugin-image">
-        <p>Our feature extraction module identifies and segments key kidney structures (glomeruli, tubules, arteries) using deep learning. It then quantifies key metrics (diameters, areas, densities) and correlates these with clinical parameters like age, serum creatinine, and eGFR for better understanding of kidney morphology and disease implications.</p>
-      </div>
-    </section>
-
-
-
-
-    <!-- Footer Section -->
-    <footer class="site-footer">
-      <span class="site-footer-credits">© CMIL Lab, 2024. All rights reserved.</span>
-  </footer>
+    </div>
+  </section>
   
-  </main>
+
+  <section id="ifta" class="plugin-details">
+    <div class="container">
+      <div class="details-content">
+        <div class="details-text">
+          <h3 class="section-heading">IFTA and Glomerulosclerosis Segmentation</h3>
+          <p>The IFTA Segmentation tool automates the detection and quantification of Interstitial Fibrosis, Tubular Atrophy (IFTA), and Glomerulosclerosis in kidney tissue. This tool enables efficient and accurate segmentation from renal biopsy images.</p>
+          <a href="#" class="back-btn" onclick="showOverview()">Back to Plugins</a>
+        </div>
+        <div class="details-image">
+          <img src="media/IFTA.png" alt="IFTA Segmentation">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="ptc" class="plugin-details">
+    <div class="container">
+      <div class="details-content">
+        <div class="details-text">
+          <h3 class="section-heading">PTC Segmentation</h3>
+          <p>Peritubular Capillary (PTC) segmentation quantifies PTC characteristics such as density, size, and shape in kidney biopsies, providing insights into microvascular changes and disease progression.</p>
+          <a href="#" class="back-btn" onclick="showOverview()">Back to Plugins</a>
+        </div>
+        <div class="details-image">
+          <img src="media/PTC.png" alt="PTC Segmentation">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <section id="featureExtraction" class="plugin-details">
+    <div class="container">
+      <div class="details-content">
+        <div class="details-text">
+          <h3 class="section-heading">Feature Extraction</h3>
+          <p>Our feature extraction module identifies and segments key kidney structures (glomeruli, tubules, arteries) using deep learning. It then quantifies key metrics (diameters, areas, densities) and correlates these with clinical parameters like age, serum creatinine, and eGFR for better understanding of kidney morphology and disease implications.</p>
+          <a href="#" class="back-btn" onclick="showOverview()">Back to Plugins</a>
+        </div>
+        <div class="details-image">
+          <img src="media/feature_extraction.png" alt="Feature Extraction">
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© CMIL Lab, 2024. All rights reserved.</p>
+      <nav class="footer-nav">
+        <a href="/home.html">Home</a>
+        <a href="/plugins.html">Plugins</a>
+        <a href="/contact.html">Contact</a>
+        <a href="https://app.smartsheet.com/b/form/d27767f494de441787128587141f8e36" target="_blank">Feedback</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    function showDetails(sectionId) {
+      document.querySelectorAll('.plugin-details').forEach(section => section.classList.remove('active'));
+      document.getElementById('plugins-overview').style.display = 'none';
+      document.getElementById(sectionId).classList.add('active');
+    }
+
+    function showOverview() {
+      document.querySelectorAll('.plugin-details').forEach(section => section.classList.remove('active'));
+      document.getElementById('plugins-overview').style.display = 'block';
+    }
+  </script>
 </body>
+
 </html>
