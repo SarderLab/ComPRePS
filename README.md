@@ -46,3 +46,9 @@ Visit [compreps.wiki](https://compreps.wiki/) to explore more.
    ```bash
    git clone https://github.com/SarderLab/ComPRePS.git
    cd ComPRePS
+2. Open the `home.html` file in your browser to preview the site locally.
+
+3. For development:
+   ```plaintext
+   - Make changes to the HTML and CSS files.
+   - Test locally before deploying changes.
