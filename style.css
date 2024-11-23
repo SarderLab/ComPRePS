@@ -436,7 +436,7 @@ p {
 
 .site-footer {
     background-color: #F8F9FA; 
-    color: #555555; 
+    color: #ffffff; 
     padding: 1.5rem 0;
     border-top: 1px solid #E0E0E0; 
     text-align: center;
@@ -451,7 +451,7 @@ p {
 
 .footer-container p {
     margin: 0;
-    color: #555555;
+    color: #ffffff;
     font-weight: 400;
 }
 
@@ -477,6 +477,30 @@ p {
 
 .footer-links a:hover {
     color: #FF6B6B; 
+}
+
+.site-footer {
+    background-color: #162447; 
+    color: #FFFFFF; 
+    padding: 2rem;
+    text-align: center;
+}
+
+.site-footer p {
+    color: #E0E0E0; 
+    font-size: 0.9rem;
+}
+
+.site-footer a {
+    color: #E0E0E0; 
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+.site-footer a:hover {
+    color: #FFFFFF;
+    text-decoration: underline;
 }
 
 .btn-primary {
@@ -944,7 +968,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 4rem 2rem;
-    background: linear-gradient(to right, rgba(0, 24, 72, 0.45), rgba(0, 24, 72, 0.45)), 
+    background: linear-gradient(to right, rgba(0, 24, 72, 0.65), rgba(0, 24, 72, 0.45)), 
                 url('media/background.png') no-repeat center/cover;
     color: #FFFFFF;
   }
@@ -1140,4 +1164,51 @@ body {
     border: none; 
   }
   
+/* Lightbox Styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  .lightbox-content {
+    max-width: 100%;
+    max-height: 100%;
+    transition: transform 0.3s ease;
+  }
+  
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: #bbb;
+  }
+  
+  #zoom-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+    cursor: grab;
+  }
+  
+  #zoom-container:active {
+    cursor: grabbing;
+  }
   

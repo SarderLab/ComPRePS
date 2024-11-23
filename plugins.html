@@ -39,7 +39,7 @@
       </div>
       <nav class="nav">
         <a href="/plugins.html">Plugins</a>
-        <a href="/Contact.html">Contact</a>
+        <a href="/about.html">About Us</a>
         <a href="https://app.smartsheet.com/b/form/d27767f494de441787128587141f8e36" target="_blank">Feedback</a>
       </nav>
     </div>
@@ -75,12 +75,16 @@
     <div class="container">
       <div class="details-content">
         <div class="details-text">
-          <h3 class="section-heading">Multi Compartment Segmentation</h3>
+          <h3 class="section-heading">
+            <a href="https://github.com/SarderLab/Multi-Compartment-Segmentation" target="_blank" style="color: #1F4068; text-decoration: none;">
+              Multi Compartment Segmentation
+          </a>
+          </h3>
           <p>Leverage our <a href="https://github.com/facebookresearch/detectron2" target="_blank">Detectron2</a>-based model to analyze kidney WSIs by identifying and segmenting six compartments: cortical interstitium, medullary interstitium, non-sclerotic glomerulus, sclerotic glomerulus, tubule, and artery/arteriole.</p>
           <a href="#" class="back-btn" onclick="showOverview()">Back to Plugins</a>
         </div>
         <div class="details-image">
-          <img src="media/multi_compartment.gif" alt="Multi Compartment Segmentation">
+          <img src="media/multi_compartment.gif" alt="Multi Compartment Segmentation" onclick="openLightbox(this)">
         </div>
       </div>
     </div>
@@ -91,12 +95,16 @@
     <div class="container">
       <div class="details-content">
         <div class="details-text">
-          <h3 class="section-heading">IFTA and Glomerulosclerosis Segmentation</h3>
+          <h3 class="section-heading">
+            <a href="https://github.com/SarderLab/IFTA_segmentation" target="_blank" style="color: #1F4068; text-decoration: none;">
+              IFTA and Glomerulosclerosis Segmentation
+            </a>
+          </h3>
           <p>The IFTA Segmentation tool automates the detection and quantification of Interstitial Fibrosis, Tubular Atrophy (IFTA), and Glomerulosclerosis in kidney tissue. This tool enables efficient and accurate segmentation from renal biopsy images.</p>
           <a href="#" class="back-btn" onclick="showOverview()">Back to Plugins</a>
         </div>
         <div class="details-image">
-          <img src="media/IFTA.png" alt="IFTA Segmentation">
+          <img src="media/IFTA.png" alt="IFTA Segmentation" onclick="openLightbox(this)">
         </div>
       </div>
     </div>
@@ -106,12 +114,16 @@
     <div class="container">
       <div class="details-content">
         <div class="details-text">
-          <h3 class="section-heading">PTC Segmentation</h3>
+          <h3 class="section-heading">
+            <a href="https://github.com/SarderLab/PTC_segmentation/" target="_blank" style="color: #1F4068; text-decoration: none;">
+              PTC Segmentation
+            </a>
+          </h3>
           <p>Peritubular Capillary (PTC) segmentation quantifies PTC characteristics such as density, size, and shape in kidney biopsies, providing insights into microvascular changes and disease progression.</p>
           <a href="#" class="back-btn" onclick="showOverview()">Back to Plugins</a>
         </div>
         <div class="details-image">
-          <img src="media/PTC.png" alt="PTC Segmentation">
+          <img src="media/PTC.png" alt="PTC Segmentation" onclick="openLightbox(this)">
         </div>
       </div>
     </div>
@@ -121,12 +133,16 @@
     <div class="container">
       <div class="details-content">
         <div class="details-text">
-          <h3 class="section-heading">Feature Extraction</h3>
+          <h3 class="section-heading">
+            <a href="https://github.com/SarderLab/CombinedFeatureExtraction" target="_blank" style="color: #1F4068; text-decoration: none;">
+              Feature Extraction
+            </a>
+          </h3>
           <p>Our feature extraction module identifies and segments key kidney structures (glomeruli, tubules, arteries) using deep learning. It then quantifies key metrics (diameters, areas, densities) and correlates these with clinical parameters like age, serum creatinine, and eGFR for better understanding of kidney morphology and disease implications.</p>
           <a href="#" class="back-btn" onclick="showOverview()">Back to Plugins</a>
         </div>
         <div class="details-image">
-          <img src="media/feature_extraction.png" alt="Feature Extraction">
+          <img src="media/violin_plot.gif" alt="Feature Extraction" onclick="openLightbox(this)">
         </div>
       </div>
     </div>
@@ -139,11 +155,19 @@
       <nav class="footer-nav">
         <a href="/home.html">Home</a>
         <a href="/plugins.html">Plugins</a>
-        <a href="/contact.html">Contact</a>
+        <a href="/about.html">About Us</a>
         <a href="https://app.smartsheet.com/b/form/d27767f494de441787128587141f8e36" target="_blank">Feedback</a>
       </nav>
     </div>
   </footer>
+
+  <div id="lightbox" class="lightbox">
+    <span class="close" onclick="closeLightbox()">&times;</span>
+    <div id="zoom-container">
+      <img class="lightbox-content" id="lightbox-img" src="" alt="Zoomable View">
+    </div>
+  </div>
+  
 
   <script>
     function showDetails(sectionId) {
@@ -156,7 +180,105 @@
       document.querySelectorAll('.plugin-details').forEach(section => section.classList.remove('active'));
       document.getElementById('plugins-overview').style.display = 'block';
     }
+
+    let currentScale = 1;
+let currentTranslateX = 0;
+let currentTranslateY = 0;
+let isDragging = false;
+let startX = 0, startY = 0;
+
+const lightboxImg = document.getElementById('lightbox-img');
+const zoomContainer = document.getElementById('zoom-container');
+
+function openLightbox(image) {
+  const lightbox = document.getElementById('lightbox');
+
+  // Set the lightbox image source to the clicked image source
+  lightboxImg.src = image.src;
+
+  // Reset zoom and position
+  currentScale = 1;
+  currentTranslateX = 0;
+  currentTranslateY = 0;
+  updateTransform();
+
+  // Show the lightbox
+  lightbox.style.display = 'block';
+}
+
+function closeLightbox() {
+  document.getElementById('lightbox').style.display = 'none';
+}
+
+function updateTransform() {
+  lightboxImg.style.transform = `translate(${currentTranslateX}px, ${currentTranslateY}px) scale(${currentScale})`;
+}
+
+// Zoom with mouse wheel
+zoomContainer.addEventListener('wheel', (event) => {
+  event.preventDefault();
+
+  const rect = lightboxImg.getBoundingClientRect();
+  const offsetX = event.clientX - rect.left; // X position of mouse relative to the image
+  const offsetY = event.clientY - rect.top;  // Y position of mouse relative to the image
+
+  const scaleChange = event.deltaY > 0 ? -0.1 : 0.1; // Zoom in or out
+  const newScale = Math.min(Math.max(1, currentScale + scaleChange), 5); // Limit zoom between 1x and 5x
+
+  // Prevent image from moving away during zoom out
+  if (newScale === 1) {
+    currentTranslateX = 0;
+    currentTranslateY = 0;
+  } else {
+    // Adjust the translation to keep the zoom centered at the mouse position
+    currentTranslateX -= offsetX * (newScale - currentScale) / currentScale;
+    currentTranslateY -= offsetY * (newScale - currentScale) / currentScale;
+  }
+
+  currentScale = newScale;
+  updateTransform();
+});
+
+// Start dragging
+zoomContainer.addEventListener('mousedown', (event) => {
+  isDragging = true;
+  startX = event.clientX;
+  startY = event.clientY;
+});
+
+// Drag to pan
+zoomContainer.addEventListener('mousemove', (event) => {
+  if (!isDragging) return;
+
+  const deltaX = event.clientX - startX;
+  const deltaY = event.clientY - startY;
+
+  currentTranslateX += deltaX;
+  currentTranslateY += deltaY;
+
+  startX = event.clientX;
+  startY = event.clientY;
+
+  updateTransform();
+});
+
+// Stop dragging when the mouse button is released
+zoomContainer.addEventListener('mouseup', () => {
+  isDragging = false;
+});
+
+zoomContainer.addEventListener('mouseleave', () => {
+  isDragging = false;
+});
+
+// Stop dragging on mouse release outside the zoom container
+document.addEventListener('mouseup', () => {
+  isDragging = false;
+});
+
+
   </script>
+
 </body>
 
 </html>
