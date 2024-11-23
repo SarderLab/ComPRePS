@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title>About Us | ComPRePS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Team Section Styling */
+        .team-section {
+            padding: 4rem 2rem;
+            background-color: #F4F4F9; /* Light grey background */
+            text-align: center;
+        }
+
+        .team-section h2 {
+            font-size: 2rem;
+            color: #1F4068; /* Deep blue */
+            margin-bottom: 2rem;
+        }
+
+        .team-grid {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .team-member {
+            background-color: #FFFFFF; 
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+            max-width: 300px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+         .team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .team-member img {
+            width: auto;
+            height: 150px;
+            border-radius: 5px;
+            border: 2px solid #FFFFFF;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+            transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth scaling for image */
+
+        }
+
+        .team-member h3 {
+            margin: 1rem 0 0.5rem;
+            font-size: 1.2rem;
+            color: #1F4068;
+        }
+
+        .team-member p {
+            margin: 0.5rem 0;
+            font-size: 1rem;
+            color: #555555;
+        }
+
+        .team-member .expertise {
+            font-size: 0.9rem;
+            color: #666666;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
+        }
+
+        .read-more {
+            color: #157878;
+            cursor: pointer;
+            display: inline-block;
+            margin-top: 5px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .read-more:hover {
+            color: #1F4068;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="navbar-container">
+            <div class="logo">
+                <h1 class="project-name"><a href="/home.html">ComPRePS</a></h1>
+            </div>
+            <nav class="nav">
+                <a href="/plugins.html">Plugins</a>
+                <a href="/about.html">About Us</a>
+                <a href="https://app.smartsheet.com/b/form/d27767f494de441787128587141f8e36" target="_blank">Feedback</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- About Us Section -->
+    <section class="team-section">
+        <h2>Meet Our Team</h2>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="media/prof_headshot.jpg" alt="Dr. Pinaki Sarder">
+                <h3>Dr. Pinaki Sarder</h3>
+                <p>Principal Investigator</p>
+            </div>
+            <div class="team-member">
+                <img src="media/Anindya.jpg" alt="Anindya Sankar Paul">
+                <h3>Anindya Sankar Paul</h3>
+                <p>Assistant Scientist</p>
+                <p class="expertise">
+                    Expertise: Deep Learning, Federated Learning, Secure and Privacy Preserving AI, Signal Processing, Medical Imaging
+                </p>
+                <span class="read-more" onclick="toggleText(this)">Read More</span>
+            </div>
+            <div class="team-member">
+                <img src="media/sayat.jpg" alt="Sayat Mimar">
+                <h3>Sayat Mimar</h3>
+                <p>Senior Scientist</p>
+                <p class="expertise">
+                    Expertise: AI, Data Science, Software Development
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>© CMIL Lab, 2024. All rights reserved.</p>
+            <nav class="footer-nav">
+                <a href="/home.html">Home</a>
+                <a href="/plugins.html">Plugins</a>
+                <a href="/about.html">About Us</a>
+                <a href="https://app.smartsheet.com/b/form/d27767f494de441787128587141f8e36" target="_blank">Feedback</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        function toggleText(element) {
+            const expertiseText = element.previousElementSibling;
+            const isExpanded = expertiseText.style.webkitLineClamp === "none";
+
+            if (isExpanded) {
+                expertiseText.style.webkitLineClamp = "2";
+                element.textContent = "Read More";
+            } else {
+                expertiseText.style.webkitLineClamp = "none";
+                element.textContent = "Read Less";
+            }
+        }
+    </script>
+</body>
+
+</html>
